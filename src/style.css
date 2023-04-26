@@ -1,0 +1,93 @@
+/* Graduation Festive Styles */
+body {
+    background-color: #fff9c4;
+  }
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+  #countdown {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  form label {
+    font-weight: bold;
+    color: #4CAF50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+  }
+  form input[type="date"],
+  form input[type="text"],
+  form button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  form input[type="date"] {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  form input[type="text"] {
+    flex-grow: 1;
+    color: #333;
+  }
+  form button {
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  form button:hover {
+    background-color: #3e8e41;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #4CAF50;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  .graduates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .graduates span {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+  }
+  .graduates span:hover {
+    background-color: #3e8e41;
+  }
+  
