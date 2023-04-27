@@ -2,8 +2,8 @@ $(function() {
 
     var sheetID = "1MsD73QEMyxs5y8lPnFZoCTPKLUmmV3dkqrpz39aRtQs";
     var apiKey = "AIzaSyCZMC-2lvjhIywC5liOc48pbQoCP7rrWJE";
-    var sheetURL = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetID + "/values/A1:C100?key=" + apiKey;
-
+    var sheetURL = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetID + "/values/A1:H100?key=" + apiKey;
+    
     
     // Retrieve data from Google Sheets
     function getData() {
@@ -14,26 +14,42 @@ $(function() {
             for (var i = 1; i < rows.length; i++) {
                 var date = rows[i][0];
                 var event = rows[i][1];
-                var additionalInfo = rows[i][2]; // added line for third column
-                table.append("<tr><td>" + date + "</td><td>" + event + "</td><td>" + additionalInfo + "</td></tr>"); // updated line for third column
+                var additionalInfo1 = rows[i][2]; 
+                var additionalInfo2 = rows[i][3];
+                var additionalInfo3 = rows[i][4];
+                var additionalInfo4 = rows[i][5];
+                var additionalInfo5 = rows[i][6];
+                var additionalInfo6 = rows[i][7];  // Add this line for column H
+                table.append("<tr><td>" + date + "</td><td>" + event + "</td><td>" + additionalInfo1 + "</td><td>" + additionalInfo2 + "</td><td>" + additionalInfo3 + "</td><td>" + additionalInfo4 + "</td><td>" + additionalInfo5 + "</td><td>" + additionalInfo6 + "</td></tr>"); // Add additionalInfo6 to the HTML
             }
+            
+            
                         // Sort the table rows based on the dates in the first column
             rows = table.find("tr").toArray();
+
+
+            
             rows.sort(function(a, b) {
                 var date1 = new Date($(a).find("td:first-child").text());
                 var date2 = new Date($(b).find("td:first-child").text());
-                if (date1 === date2) { // added lines for third column
+                if (date1 === date2) {
                     var event1 = $(a).find("td:nth-child(2)").text();
                     var event2 = $(b).find("td:nth-child(2)").text();
                     if (event1 === event2) {
                         var additionalInfo1 = $(a).find("td:nth-child(3)").text();
                         var additionalInfo2 = $(b).find("td:nth-child(3)").text();
-                        return additionalInfo1.localeCompare(additionalInfo2);
+                        var additionalInfo3 = $(a).find("td:nth-child(4)").text();
+                        var additionalInfo4 = $(b).find("td:nth-child(4)").text();
+                        var additionalInfo5 = $(a).find("td:nth-child(5)").text();
+                        return additionalInfo1.localeCompare(additionalInfo2) ||
+                               additionalInfo3.localeCompare(additionalInfo4) ||
+                               additionalInfo5.localeCompare(additionalInfo5);
                     }
                     return event1.localeCompare(event2);
                 }
                 return date1 - date2;
             });
+            
             
             
                 $.each(rows, function(index, row) {
