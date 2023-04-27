@@ -15,11 +15,32 @@ $(function() {
                 var date = rows[i][0];
                 var event = rows[i][1];
                 var additionalInfo1 = rows[i][2]; 
+                /*
                 var additionalInfo2 = rows[i][3];
                 var additionalInfo3 = rows[i][4];
                 var additionalInfo4 = rows[i][5];
                 var additionalInfo5 = rows[i][6];
                 var additionalInfo6 = rows[i][7];  // Add this line for column H
+                */
+                
+                var additionalInfo2 = rows[i][3] === "TRUE" ? "Going" : "No";
+                var additionalInfo3 = rows[i][4] === "TRUE" ? "Going" : "No";
+                var additionalInfo4 = rows[i][5] === "TRUE" ? "Going" : "No";
+                var additionalInfo5 = rows[i][6] === "TRUE" ? "Going" : "No";
+                var additionalInfo6 = rows[i][7] === "TRUE" ? "Going" : "No";
+                                
+                
+                if (additionalInfo2 === "Going" && additionalInfo3 === "Going" && additionalInfo4 === "Going" && additionalInfo5 === "Going" && additionalInfo6 === "Going") {
+                    additionalInfo2 = "ALL IN";
+                    additionalInfo3 = "ALL IN";
+                    additionalInfo4 = "ALL IN";
+                    additionalInfo5 = "ALL IN";
+                    additionalInfo6 = "ALL IN";
+                    
+                  }
+              
+
+                
                 table.append("<tr><td>" + date + "</td><td>" + event + "</td><td>" + additionalInfo1 + "</td><td>" + additionalInfo2 + "</td><td>" + additionalInfo3 + "</td><td>" + additionalInfo4 + "</td><td>" + additionalInfo5 + "</td><td>" + additionalInfo6 + "</td></tr>"); // Add additionalInfo6 to the HTML
             }
             
